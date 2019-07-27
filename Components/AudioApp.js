@@ -18,7 +18,7 @@ export default function AudioApp() {
 
     try {
       let path = Music[number];
-      await soundObject.loadAsync(path); // loads the music in memory
+      await soundObject.loadAsync(path); // loads the music in the memory
       await soundObject
         .playAsync() // plays the song
         .then(async playbackStatus => {
@@ -37,8 +37,8 @@ export default function AudioApp() {
   };
 
   return (
-    <View style={styles.container}>
-      <ScrollView style={styles.gridContainer}>
+    <ScrollView style={styles.container}>
+      <View style={styles.gridContainer}>
         <Image style={styles.logo} source={require("../assets/pp.png")} />
         <View style={styles.rowContainer}>
           <TouchableOpacity
@@ -102,8 +102,8 @@ export default function AudioApp() {
             <Text style={styles.itemText}>Ten</Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -113,22 +113,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   gridContainer: {
-    flex: 33.3,
+    flex: 1,
     margin: 5
   },
   logo: {
     alignSelf: "center",
-    marginTop: 15
+    marginTop: 35,
+    width: 150,
+    height: 150,
+    marginBottom: 20
   },
   rowContainer: {
-    flexDirection: "row"
+    flexDirection: "column"
   },
   item: {
     flex: 1,
-    height: 110,
+    height: 50,
     alignItems: "center",
     justifyContent: "center",
-    margin: 2
+    margin: 5
   },
   itemText: {
     color: "#FFF",
